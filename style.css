@@ -1,0 +1,365 @@
+/* Reseteo de márgenes y padding para el body */
+body {
+  font-family: 'Oswald';
+  margin: 0;
+  padding: 0;
+  background: url('IMG/fondo_medico1.webp') no-repeat center center fixed;
+}
+
+/* Estilo para la navbar fija en la parte superior */
+.navbar {
+  height: 65px;
+  width: 100%;
+  background-image: linear-gradient(to right, #ccecee 30%, 	#14967f 70%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  z-index: 999; /* Asegura que la navbar esté encima de otros elementos */
+}
+
+/* Contenedor de botones dentro de la navbar */
+.navbar .button-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-right: 60px;
+}
+
+/* Contenido de la navbar (logo y texto) */
+.navbar-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Estilo para el logo de la navbar */
+.navbar-logo {
+  height: 40px;
+}
+
+/* Estilo para el texto de la navbar */
+.navbar-text {
+  color: white;
+  font-size: 18px;
+}
+
+/* Estilo para los enlaces dentro de la navbar */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+}
+
+/* Estilo para el hover de los enlaces en la navbar */
+.navbar a:hover {
+  background-color: #14967f;
+  color: black;
+}
+
+/* Estilo principal para el contenido de la página */
+#main {
+  transition: margin-left 0.5s, margin-top 0.5s; /* Asegura una transición suave */
+  padding: 16px;
+  margin-top: 50px; /* Asegura que el contenido principal no se esconda detrás de la navbar */
+  margin-left: 0; /* Asegura que el contenido principal no se desplace */
+  background-color: #ffffff;
+  justify-content: center;
+  border-radius: 45px; /* Radio de redondeo para todas las esquinas */
+}
+
+
+/* Estilo para la barra lateral (sidebar) */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 998; /* Asegura que la sidebar esté debajo de la navbar */
+  top: 50px; /* Ajusta según la altura de la navbar */
+  left: 0;
+  background-image: linear-gradient(to bottom, #ccecee, 	#14967f);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+/* Estilo para el contenido principal cuando la sidebar está abierta */
+.sidebar-open #main {
+  margin-left: 250px; /* Mueve el contenido principal hacia la derecha cuando se abre la sidebar */
+}
+
+/* Estilo para los enlaces dentro de la sidebar */
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Estilo para el hover de los enlaces en la sidebar */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Estilo para el botón de apertura de la sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #003c9c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para el hover del botón de apertura de la sidebar */
+.openbtn:hover {
+  background-color: #002b73;
+}
+
+/* Estilo para el texto centrado en la página */
+.centered-text {
+  justify-content: center;
+  display: inline-block;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+/* Contenedor para las cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Estilo para cada card */
+.card {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo para el hover de las cards */
+.card:hover {
+  background-color: #e0f7fa;
+  transform: scale(1.05);
+}
+
+/* Estilo para una card seleccionada */
+.card.selected {
+  background-color: #00bcd4;
+  color: white;
+}
+
+/* Contenedor del dashboard */
+#dashboard-container {
+  margin-top: 40px;
+}
+
+/* Estilo para el título del dashboard */
+.dashboard-title {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Contenedor para el contenido del dashboard */
+.dashboard-content {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+}
+
+/* Contenedor para los divs pequeños */
+.small-div-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  position: relative; /* Asegura que los divs pequeños estén en un contexto normal */
+  z-index: 2; /* Asegura que los divs pequeños estén encima del div grande */
+  transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
+}
+
+/* Estilo compartido para los divs pequeños y grandes */
+.small-div, .large-div {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Estilo específico para los divs pequeños */
+.small-div {
+  width: 45%;
+  transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
+}
+
+/* Estilo específico para el div grande */
+.large-div {
+  width: 100%;
+  margin-top: 20px; /* Ajusta según el espacio necesario */
+  z-index: 1; /* Asegura que el div grande quede detrás de los divs pequeños */
+  overflow: auto; /* Permite el desplazamiento si el contenido excede el tamaño del contenedor */
+}
+
+/* Estilo para los divs cuando la sidebar está abierta */
+.sidebar-open .small-div-container,
+.sidebar-open .small-div {
+  transform: scale(0.9); /* Ajusta el valor según el tamaño necesario */
+}
+
+.sidebar-open .large-div {
+  margin-top: 120px; /* Ajusta según el tamaño de los divs pequeños */
+}
+
+/* Estilo para el gráfico de barras */
+.bar-chart {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden; /* Para evitar que las barras salgan del contenedor */
+  background: rgba(255, 255, 255, 0.8); /* Fondo blanco transparente */
+}
+
+/* Estilo para cada barra en el gráfico de barras */
+.bar {
+  width: 20%;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: height 1s ease; /* Animación de altura */
+}
+
+/* Contenedor para los botones */
+.button-group {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Estilo para los botones */
+.button-group button {
+  background-color: #20c997; /* Verde agua */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para el hover de los botones */
+.button-group button:hover {
+  background-color: #1a9a80; /* Color más oscuro al pasar el ratón */
+}
+
+/* Estilo para el body en la página de login con imagen de fondo */
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('IMG/fondo_medico1.webp') no-repeat center center fixed; /* Fondo fijo */
+  background-size: cover;
+}
+
+/* Estilo para el contenedor del login */
+.login-container {
+  background: linear-gradient(to right, #007bff 50%, #ffffff 50%);
+  width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Asegura que el contenido no sobresalga */
+  position: relative;
+}
+
+/* Estilo para el formulario de login */
+.login-form {
+  background-color: white;
+  padding: 40px;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* Estilo para los inputs de usuario y contraseña */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* Estilo para el hover y enfoque en los inputs */
+.login-form input[type="text"]:hover,
+.login-form input[type="password"]:hover,
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+  border-color: #007bff;
+}
+
+/* Estilo para el campo invisible */
+.login-form .invisible-field {
+  display: none; /* Oculta el campo */
+}
+
+/* Estilo para el botón de login */
+.login-form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+/* Estilo para el hover del botón de login */
+.login-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.login-btn{
+  border-radius: 25px;
+}

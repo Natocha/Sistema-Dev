@@ -1,0 +1,111 @@
+/* Aplica la imagen de fondo al body */
+.login-body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('IMG/fondo_medico1.webp') no-repeat center center fixed; /* Ajusta la ruta de la imagen */
+    background-size: cover;
+}
+
+/* Añade un degradado blanco sobre la imagen de fondo */
+.login-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
+    z-index: 1;
+    pointer-events: none; /* Permite hacer clic en elementos debajo del pseudo-elemento */
+}
+
+/* Estilo para el contenedor de login con fondo dividido */
+.login-container {
+    display: flex;
+    width: 800px; /* Aumento del tamaño */
+    height: 600px; /* Aumento de la altura */
+    background: transparent; /* Fondo transparente para el contenedor */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 2; /* Asegura que el contenedor esté por encima del degradado */
+}
+
+/* Panel izquierdo azul sin contenido */
+.left-panel {
+    background: rgba(173, 216, 230, 0.9); /* Color celeste opaco con mayor transparencia */
+    width: 40%;
+}
+
+/* Panel derecho blanco con contenido del login */
+.right-panel {
+    background: rgba(255, 255, 255, 0.6); /* Blanco más transparente */
+    width: 60%;
+    padding: 40px; /* Aumento del padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Título del formulario */
+.right-panel h2 {
+    margin-bottom: 30px; /* Aumento del margen inferior */
+}
+
+/* Estilo de las etiquetas */
+.right-panel label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+    width: 100%;
+}
+
+/* Estilo de los campos de entrada */
+.right-panel input[type="text"],
+.right-panel input[type="password"] {
+    width: calc(100% - 20px); /* Ajusta el ancho para incluir padding */
+    padding: 15px; /* Aumento del padding */
+    margin-bottom: 15px; /* Aumento del margen inferior */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilo del checkbox */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0; /* Aumento del margen */
+    width: 100%;
+}
+
+/* Estilo del checkbox */
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Estilo del botón */
+.login-button {
+    background-color: #20c997; /* Verde agua */
+    color: white;
+    border: none;
+    border-radius: 50px; /* Botón redondo */
+    padding: 15px 30px; /* Aumento del padding */
+    cursor: pointer;
+    font-size: 18px; /* Aumento del tamaño de la fuente */
+    transition: background-color 0.3s ease;
+    width: calc(100% - 40px); /* Ajuste del ancho para el padding */
+    text-align: center; /* Centra el texto dentro del botón */
+    margin-top: 20px; /* Separación del contenido superior */
+    margin-bottom: 10px; /* Separación inferior del botón */
+}
+
+.login-button:hover {
+    background-color: #1a9a80; /* Color más oscuro al pasar el ratón */
+}
