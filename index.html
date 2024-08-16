@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Dev</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <button class="openbtn" onclick="toggleNav()">☰</button>
+    <div class="navbar-content">
+      <img src='IMG/Logo.png' alt="Logo" class="navbar-logo">
+      <span class="navbar-text">Cuarteto De Virgos</span>
+    </div>
+    <div class="button-container">
+      <a href="login.html" class="login-btn" onclick="login()">Login</a>
+    </div>
+  </div>
+
+<!-- Barra lateral -->
+<div id="mySidebar" class="sidebar">
+  <a href="#">Dashboard</a>
+  <a href="#">Clientes</a>
+  <a href="#">Proveedores</a>
+  <a href="#">Ingresos</a>
+  <a href="#">Administrar bases</a>
+  <a href="#">Configuracion</a>
+  <a href="#">Cuenta</a>
+</div>
+
+<div class="centered-text">
+  Sistema De Gestión De Inventario
+</div>
+
+<div id="main">
+  
+  <!-- Contenedor de cartas -->
+  <div class="card-container">
+    <div class="card">👥Clientes</div>
+    <div class="card">🚐Proveedores</div>
+    <div class="card">💲Visualizar Ingresos</div>
+    <div class="card">🔨Administrar Bases</div>
+    <div class="card">⚙️Configuración</div>
+    <div class="card">⛔Cerrar Sesión</div>
+  </div>
+</div>
+<div id="dashboard-container">
+  <div class="dashboard-title">
+    Dashboard
+  </div>
+
+  <div class="dashboard-content">
+    <div class="small-div-container">
+      <div class="small-div">
+        <h3>Porcentaje De Ganancia</h3>
+        <p>55.37%</p>
+      </div>
+      <div class="small-div">
+        <h3>Stock Disponible</h3>
+        <p>13.048 Unidades </p>
+      </div>
+    </div>
+    <div class="large-div">
+      <h3>Gráfico de Barras</h3>
+      <div class="bar-chart" id="bar-chart">
+        <div class="bar" style="height: 80%;">80%</div>
+        <div class="bar" style="height: 60%;">60%</div>
+        <div class="bar" style="height: 40%;">40%</div>
+        <div class="bar" style="height: 20%;">20%</div>
+      </div>
+      <div class="button-group">
+        <button onclick="updateChartType('high-low')">Alta y Baja</button>
+        <button onclick="updateChartType('low-high')">Baja y Alta</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="renderer.js" defer></script>
+<script src="chart.js" defer></script>
+
+</body>
+</html>
